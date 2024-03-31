@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://pabpereza.dev/blog</id>
+    <title>Pabpereza Blog</title>
+    <updated>2024-02-12T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://pabpereza.dev/blog"/>
+    <subtitle>Pabpereza Blog</subtitle>
+    <icon>https://pabpereza.dev/img/logo_icon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Cracking de contraseñas con Hashcat]]></title>
+        <id>https://pabpereza.dev/blog/cracking_passwords_hashcat</id>
+        <link href="https://pabpereza.dev/blog/cracking_passwords_hashcat"/>
+        <updated>2024-02-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[¡Pon a prueba tus contraseñas, secretos y hashes!]]></summary>
+        <content type="html"><![CDATA[<p>¡Pon a prueba tus contraseñas, secretos y hashes!</p>
+<p>Bueno, comenzaremos hablando sobre cómo se utilizan las contraseñas en nuestras actividades cotidianas. Desde el acceso a nuestros correos electrónicos hasta nuestras cuentas bancarias, las contraseñas juegan un papel crucial en la protección de nuestra información personal. Es verdad que todas las grandes compañias están trabajando en un nuevo estándar llamado passkey para que los usuarios finales no manejen credenciales, hablaré más adelante sobre esto.</p>
+<p>En cualquiera de los casos, maneje o no contraseñas el usuario, los sistemas siempre manejan secretos para validar la autenticación y autorización de un usuario, una llamada a un API o la interacción que sea, a través de tokens de muchos tipos, entre los más destacados, JWT.</p>
+<p>Ahora, hablemos sobre cómo se transportan y almacenan las contraseñas durante las llamadas HTTP u otros protocolos. Cuando introduces tu contraseña en un sitio web, esta se transforma en un hash antes de ser enviada, y se almacena en la base de datos del sitio web.</p>
+<!-- -->
+<p>Pero, ¿qué sucede cuando los cibercriminales intentan robar o descifrar estos hashes o tokens? Utilizan una variedad de técnicas. El método más común es la ingeniería social, como el phishing, que implican manipularte para que les reveles tu contraseña, y es una de las más efectivas actualmente.</p>
+<p>Otra vía, y la que quiero explorar hoy, es el uso de herramientas de cracking o recuperación de contraseñas, con el objetivo que ser capaces de poner a prueba nuestros secretos.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="como-se-obtienen-los-hashes">Como se obtienen los hashes<a href="https://pabpereza.dev/blog/cracking_passwords_hashcat#como-se-obtienen-los-hashes" class="hash-link" aria-label="Enlace directo al Como se obtienen los hashes" title="Enlace directo al Como se obtienen los hashes">​</a></h2>
+<p>Un atacante puede obtener hashes de contraseñas de varias maneras. Por ejemplo, si un atacante obtiene acceso a una base de datos de contraseñas, puede extraer los hashes de las contraseñas almacenadas en la base de datos. También puede obtener hashes de contraseñas interceptando el tráfico de red o mediante la ingeniería inversa de aplicaciones.</p>
+<p>Una vez que un atacante tiene un hash de contraseña, puede utilizar herramientas de cracking de contraseñas para obtener la contraseña original. Esto se hace comparando los hashes calculados con los hashes obtenidos, y cuando hay una coincidencia, la contraseña ha sido descifrada.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="hashcat">Hashcat<a href="https://pabpereza.dev/blog/cracking_passwords_hashcat#hashcat" class="hash-link" aria-label="Enlace directo al Hashcat" title="Enlace directo al Hashcat">​</a></h2>
+<p>Hashcat es una de las herramientas más avanzadas en recuperación de contraseñas. Puede utilizar diferentes métodos de ataque para descifrar un hash de contraseña, incluyendo ataques de fuerza bruta, ataques de diccionario y otros. Funciona comparando los hashes calculados con los hashes obtenidos, y cuando hay una coincidencia, la contraseña ha sido descifrada.</p>
+<p><a href="https://hashcat.net/hashcat/" target="_blank" rel="noopener noreferrer">Web oficial de Hashcat</a></p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="ejemplos">Ejemplos<a href="https://pabpereza.dev/blog/cracking_passwords_hashcat#ejemplos" class="hash-link" aria-label="Enlace directo al Ejemplos" title="Enlace directo al Ejemplos">​</a></h2>
+<p>Para poner en práctica la herramienta he creado un vídeo en el que muestro cómo crackear diferentes tipos de hashes con diferentes métodos de ataque.</p>]]></content>
+        <author>
+            <name>Pablo Pérez-Aradros</name>
+            <email>pabloperezaradros@gmail.com</email>
+            <uri>https://github.com/pabpereza</uri>
+        </author>
+        <category label="docker" term="docker"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aligerar imágenes Docker]]></title>
+        <id>https://pabpereza.dev/blog/aligerar_imagenes_docker</id>
+        <link href="https://pabpereza.dev/blog/aligerar_imagenes_docker"/>
+        <updated>2023-03-08T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[En el mundo de la infraestructura como código, Docker se ha convertido en una herramienta esencial para desarrolladores y administradores de sistemas. Una de las ventajas de Docker es la capacidad de crear imágenes ligeras, lo que permite un despliegue rápido y eficiente de aplicaciones.]]></summary>
+        <content type="html"><![CDATA[<p>En el mundo de la infraestructura como código, Docker se ha convertido en una herramienta esencial para desarrolladores y administradores de sistemas. Una de las ventajas de Docker es la capacidad de crear imágenes ligeras, lo que permite un despliegue rápido y eficiente de aplicaciones.</p>
+<p>Existen casos, ya sea por la complejidad de la aplicación, la cantidad de paquetes instalados o la cantidad de archivos, en los que las imágenes Docker pueden llegar a ser muy pesadas. Esto puede afectar muy negativamente el rendimiento y la eficiencia de los automatismos de construcción, pruebas y despliegue.</p>
+<p>En este artículo, vamos a explorar cómo crear imágenes de Docker ligeras para optimizar el rendimiento y la eficiencia en el despliegue de aplicaciones.</p>
+<p>Por si lo prefieres, puedes ver el vídeo en YouTube:</p>
+<p><a href="https://youtu.be/QVcLTxmcJ8s" target="_blank" rel="noopener noreferrer">https://youtu.be/QVcLTxmcJ8s</a></p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="paso-1-utilizar-una-imagen-base-pequeña">Paso 1: Utilizar una imagen base pequeña<a href="https://pabpereza.dev/blog/aligerar_imagenes_docker#paso-1-utilizar-una-imagen-base-peque%C3%B1a" class="hash-link" aria-label="Enlace directo al Paso 1: Utilizar una imagen base pequeña" title="Enlace directo al Paso 1: Utilizar una imagen base pequeña">​</a></h2>
+<p>La primera etapa en la creación de una imagen de Docker ligera es elegir una imagen base pequeña. Esto significa elegir una imagen que tenga el menor tamaño posible y solo contenga los componentes esenciales para ejecutar la aplicación. Por ejemplo, dentro de las imágenes de debian, podemos optar por las versiones con tag "-slim" (debian:11-slim) las cuales traen muchos menos paquetes por defecto.</p>
+<p>Otras imágenes que se han vuelto muy populares los últimos años son las de Alpine Linux. Estas tienen un tamaño minúsculo y tienen un sistema de paquetes muy poblado y bien mantenido.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="paso-2-eliminar-archivos-no-necesarios">Paso 2: Eliminar archivos no necesarios<a href="https://pabpereza.dev/blog/aligerar_imagenes_docker#paso-2-eliminar-archivos-no-necesarios" class="hash-link" aria-label="Enlace directo al Paso 2: Eliminar archivos no necesarios" title="Enlace directo al Paso 2: Eliminar archivos no necesarios">​</a></h2>
+<p>Una vez que tenemos nuestra imagen base, es importante eliminar cualquier archivo o paquete que no sea necesario para la ejecución de la aplicación. Esto puede incluir documentación, archivos de configuración y aplicaciones adicionales.</p>
+<p>Un caso práctico, construyo una aplicación Java con Maven y luego utilizo una imagen base de OpenJDK para ejecutar la aplicación. En este caso, Maven no es necesario para la ejecución de la aplicación, por lo que puedo eliminarlo de la imagen. Esto sería extrapolable a npm para aplicaciones Node.js, pip para aplicaciones Python, etc.</p>
+<p>Tenemos que pensar que solo tenemos que dejar lo esencial para que la aplicación funcione. Esto no es solo una cuestión de optimización, sino también de seguridad. Si dejamos archivos o paquetes innecesarios en la imagen, podemos estar expuestos a vulnerabilidades debido a aumentar la superficie de ataque.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="paso-3-utilizar-multi-etapas-de-construcción">Paso 3: Utilizar multi-etapas de construcción<a href="https://pabpereza.dev/blog/aligerar_imagenes_docker#paso-3-utilizar-multi-etapas-de-construcci%C3%B3n" class="hash-link" aria-label="Enlace directo al Paso 3: Utilizar multi-etapas de construcción" title="Enlace directo al Paso 3: Utilizar multi-etapas de construcción">​</a></h2>
+<p>La característica de multi-etapas de construcción de Docker nos permite utilizar varias imágenes en una sola definición de construcción. Esto significa que podemos utilizar una imagen base para compilar nuestra aplicación y luego utilizar otra imagen base más pequeña para desplegar la aplicación. Esto nos permite eliminar cualquier paquete o archivo no necesario utilizado solo en la etapa de compilación.</p>
+<p>Tengo una <a href="https://youtube.com/playlist?list=PLQhxXeq1oc2mB6_KY-l_zgWJWZo_ne9MZ" target="_blank" rel="noopener noreferrer">lista de vídeos en youtube hablando del tema</a> y también <a href="https://github.com/pabpereza/multi-stage-containers-examples" target="_blank" rel="noopener noreferrer">un repositorio con varios ejemplos</a>.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="post-paso-1-monitorizar-el-rendimiento-de-la-imagen">Post-paso 1: Monitorizar el rendimiento de la imagen.<a href="https://pabpereza.dev/blog/aligerar_imagenes_docker#post-paso-1-monitorizar-el-rendimiento-de-la-imagen" class="hash-link" aria-label="Enlace directo al Post-paso 1: Monitorizar el rendimiento de la imagen." title="Enlace directo al Post-paso 1: Monitorizar el rendimiento de la imagen.">​</a></h2>
+<p>Algunos errores de optimización no serán visibles hasta que la imagen se ejecute en un entorno de producción. Por lo tanto, es importante monitorizar el rendimiento de la imagen una vez que se haya desplegado en producción. Esto nos permitirá identificar cualquier problema de rendimiento y optimizar la imagen de forma proactiva.</p>
+<p>Aquí podríamos vigilar que no se escriban demasiados archivos en el disco, que no se consuma demasiada memoria, que no se consuma demasiado ancho de banda, etc.</p>
+<p>El comando <code>docker stats</code> nos permite realizar esta tarea. Aunque tendremos que ejecutarlo manualmente, también podríamos automatizarlo o utilizar herramientas como <a href="https://prometheus.io/" target="_blank" rel="noopener noreferrer">Prometheus</a> para monitorizar el rendimiento de la imagen y guardar los datos en un servidor de métricas.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="post-paso-2-utilizar-herramientas-de-análisis-de-imágenes">Post-paso 2: Utilizar herramientas de análisis de imágenes<a href="https://pabpereza.dev/blog/aligerar_imagenes_docker#post-paso-2-utilizar-herramientas-de-an%C3%A1lisis-de-im%C3%A1genes" class="hash-link" aria-label="Enlace directo al Post-paso 2: Utilizar herramientas de análisis de imágenes" title="Enlace directo al Post-paso 2: Utilizar herramientas de análisis de imágenes">​</a></h2>
+<p>Algunas herramientas de análisis de imágenes nos permiten analizar las imágenes Docker y obtener información sobre el tamaño de la imagen, los archivos y los paquetes que contiene.</p>
+<p>Por ejemplo, la herramienta <a href="https://github.com/wagoodman/dive" target="_blank" rel="noopener noreferrer">Dive</a>, la cual, dispone recientemente de extensión de docker.</p>
+<p>Esta extensión nos permite visualizar el tamaño de cada capa de la imagen, así como los archivos y los paquetes que contiene. Esto nos permite identificar archivos y paquetes innecesarios que podemos eliminar de la imagen.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="bonus-distroless">Bonus: Distroless<a href="https://pabpereza.dev/blog/aligerar_imagenes_docker#bonus-distroless" class="hash-link" aria-label="Enlace directo al Bonus: Distroless" title="Enlace directo al Bonus: Distroless">​</a></h2>
+<p>Esto me lo guardo para un artículo/vídeo aparte, pero os dejo un enlace a enlace a la documentación de google por si no podéis esperar. <a href="https://github.com/GoogleContainerTools/distroless" target="_blank" rel="noopener noreferrer">Distroless</a></p>
+<p>Dejaré un enlace aquí cuando lo publique.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="conclusión">Conclusión<a href="https://pabpereza.dev/blog/aligerar_imagenes_docker#conclusi%C3%B3n" class="hash-link" aria-label="Enlace directo al Conclusión" title="Enlace directo al Conclusión">​</a></h2>
+<p>Para generar imágenes Docker ligeras, debemos seguir los siguientes pasos:</p>
+<ul>
+<li>Utilizar una imagen base pequeña, como las versiones slim de debian, las UBI de Red Hat o las imágenes de Alpine.</li>
+<li>Eliminar archivos no necesarios, como componentes de desarrollo, compiladores, documentación.. etc. Para esto, podemos utilizar herramientas como Dive, tanto desde la línea de comandos como desde docker desktop.</li>
+<li>Construir una imagen con multi-etapas de construcción.</li>
+</ul>]]></content>
+        <author>
+            <name>Pablo Pérez-Aradros</name>
+            <email>pabloperezaradros@gmail.com</email>
+            <uri>https://github.com/pabpereza</uri>
+        </author>
+        <category label="docker" term="docker"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[PowerToys]]></title>
+        <id>https://pabpereza.dev/blog/PowerToys</id>
+        <link href="https://pabpereza.dev/blog/PowerToys"/>
+        <updated>2023-01-10T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[PowerToys es un conjunto de herramientas de productividad de Microsoft para Windows 10 y 11. Incluye una variedad de utilidades diseñadas para mejorar la experiencia del usuario al trabajar con el sistema operativo.]]></summary>
+        <content type="html"><![CDATA[<p>PowerToys es un conjunto de herramientas de productividad de Microsoft para Windows 10 y 11. Incluye una variedad de utilidades diseñadas para mejorar la experiencia del usuario al trabajar con el sistema operativo.</p>
+<p><img decoding="async" loading="lazy" src="https://pabpereza.dev/assets/images/power_toys_banner-2d54b83f22f010e49c966d1fcd85b11f.jpg" width="650" height="376" class="img_ev3q"></p>
+<p>Una de las herramientas más populares de PowerToys es FancyZones, que permite a los usuarios crear zonas personalizadas en su escritorio para organizar sus ventanas. Esto es especialmente útil para aquellos que trabajan con varias aplicaciones al mismo tiempo y necesitan una manera de organizarlas de manera eficiente.</p>
+<p>Otra herramienta popular es PowerRename, que permite a los usuarios renombrar múltiples archivos de manera masiva con una variedad de opciones de búsqueda y reemplazo. Esto es especialmente útil para aquellos que trabajan con grandes cantidades de archivos y necesitan una manera de organizarlos de manera eficiente.</p>
+<p>PowerToys también incluye una herramienta llamada Shortcut Guide, que muestra una lista de atajos de teclado disponibles en la aplicación en la que se encuentra el usuario en ese momento. Esto es especialmente útil para aquellos que desean aprender nuevos atajos de teclado y aumentar su productividad.</p>
+<p>En resumen, PowerToys es un conjunto de herramientas de productividad de Microsoft para Windows 10 que incluye una variedad de utilidades diseñadas para mejorar la experiencia del usuario al trabajar con el sistema operativo. Incluye herramientas como FancyZones, PowerRename y Shortcut Guide, que son especialmente útiles para aquellos que trabajan con varias aplicaciones al mismo tiempo y necesitan una manera de organizarlas de manera eficiente, renombrar múltiples archivos de manera masiva y aprender nuevos atajos de teclado.</p>]]></content>
+        <author>
+            <name>Pablo Pérez-Aradros</name>
+            <email>pabloperezaradros@gmail.com</email>
+            <uri>https://github.com/pabpereza</uri>
+        </author>
+        <category label="windows" term="windows"/>
+        <category label="productividad" term="productividad"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[CKA: Mi experiencia]]></title>
+        <id>https://pabpereza.dev/blog/CKA: Mi experiencia</id>
+        <link href="https://pabpereza.dev/blog/CKA: Mi experiencia"/>
+        <updated>2022-12-21T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[¡Hola! En esta entrada me gustaría contar mi experiencia con la certificación CKA (Certified Kubernetes Administrator) gestionada por la Linux Foundation.]]></summary>
+        <content type="html"><![CDATA[<p>¡Hola! En esta entrada me gustaría contar mi experiencia con la certificación CKA (Certified Kubernetes Administrator) gestionada por la Linux Foundation.</p>
+<p>Todo este último año he dedicado mis esfuerzos, tanto en lo personal como en lo profesional, a profundizar mis conocimientos en contenedores y orquestación de los mismos. Aunque había trabajado previamente con la tecnología, no había tenido la posibilidad de pelearme con sus tripas ni desplegar mi propia infraestructura.</p>
+<p>Lo primero es contestar a las preguntas esenciales que personalmente me hice:</p>
+<ul>
+<li>¿Por qué elegí esta certificación? Personalmente me interesaba más la certificación CKS, la cuál profundiza en kubernetes desde el punto de vista de seguridad, pero sacarse el CKA primero y asentar los conocimientos base me pareció más razonable.</li>
+<li>¿Cuánto tiempo requiere? Sin conocimientos previos, si estas familiarizado con contenedores, entre tres y seis meses te la puedes sacar sin problemas. Todo depende de tu carga te trabajo, rutina personal.. etc. En mi caso, dedicando unas tres horas semanales terminé el temario del libro en 6 meses y el séptimo mes me embarqué en una maratón para repasar todo el temario y presentarme al examen.</li>
+<li>¿Cuánto tiempo dispongo para hacerla? La plataforma te deja acceder al curso y examinarte durante un año. Además, también tienes derecho a un examen extra en caso de que suspendas.</li>
+<li>¿Necesito un super ordenador? No, no es necesario. El examen se puede hacer desde cualquier navegador y no requiere de una gran potencia de procesamiento. Para realizar los ejercicios si que es recomendable un ordenador con al menos 16GB de RAM (32GB recomendable) para las múltiples instancias de kubernetes que se van a crear. También podrías hacerlo en máquinas virtuales en la nube con el coste que ello conlleva.</li>
+</ul>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="mi-experiencia">Mi experiencia<a href="https://pabpereza.dev/blog/CKA:%20Mi%20experiencia#mi-experiencia" class="hash-link" aria-label="Enlace directo al Mi experiencia" title="Enlace directo al Mi experiencia">​</a></h2>
+<p>Ahora sí, vamos al lío. Mi experiencia con la certificación CKA. Personalmente no se me hizo especialmente dura, aunque es cierto que tenía conocimientos previos de contenedores y el tema no me era completamente desconocido.</p>
+<p>El temario es bastante completo y es recomendable ir poco más allá de los ejercicios que te plantea el libro para adquirir unos conocimientos más sólidos. No te recomiendo dilatar mucho en el tiempo la certificación, si tienes tiempo, hazlo cuanto antes. Cuando al sexto mes había terminado los ejercicios del libro, había olvidado gran parte de lo aprendido y tuve que repasar todo de nuevo para llegar al examen con soltura.</p>
+<p>IMPORTANTE. Junto con el libro y el examen, también se te da acceso a dos exámenes de prueba en la plataforma killer.sh que te ayudarán a familiarizarte con el examen y a saber si estás preparado para presentarte al examen final. No te frustres si suspendes, es muy normal. Estos tienen una duración y dificultad bastante mayor respecto al examen final. Lo importante es que, aunque no te de tiempo o falles, tienes acceso durante 24 horas al examen para que lo termines de completar. Además, puedes ver si las respuestas que has dado son correctas o no (algo que en el examen final no puedes hacer) y así entender mejor como se evalúa el examen.</p>
+<p>De forma complementaria, también puedes hacer ejercicios en la plataforma katacoda, la cual te permite crear instancias de kubernetes y te plantea retos concretos que debes resolver. Es una buena forma de practicar y familiarizarte aún más con los comandos y la sintaxis de kubernetes.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="el-examen">El examen<a href="https://pabpereza.dev/blog/CKA:%20Mi%20experiencia#el-examen" class="hash-link" aria-label="Enlace directo al El examen" title="Enlace directo al El examen">​</a></h2>
+<p>El examen son 17 preguntas (si no recuerdo mal), están bien descritas y son bastante claras aun teniendo unos conocimientos básicos de inglés. Hay que obtener al menos 65 puntos para aprobar. Si has hecho los dos exámenes de prueba (aunque hayas tardado 3,4 o 7 horas en completarlos la primera vez) y has practicado con katacoda, no deberías tener problemas en aprobar.</p>
+<p>Aquí te recomiendo nada más terminar el temario, hacer un examen de prueba de killer.sh, completarlo durante las 24-36 horas que tienes abierta la plataforma sin prisa y asimilando bien todo lo que haces. A partir de ahí, no dejaría pasar más de una semana para hacer el segundo examen de prueba y el final. El segundo examen de prueba va a ser exactamente igual que el primero ( al menos en mi caso) pero te servirá para practicar la velocidad con la que solucionas los ejercicios.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="algunos-trucos-concretos-para-mejorar-tu-velocidad">Algunos trucos concretos para mejorar tu velocidad<a href="https://pabpereza.dev/blog/CKA:%20Mi%20experiencia#algunos-trucos-concretos-para-mejorar-tu-velocidad" class="hash-link" aria-label="Enlace directo al Algunos trucos concretos para mejorar tu velocidad" title="Enlace directo al Algunos trucos concretos para mejorar tu velocidad">​</a></h3>
+<p>No creo que el examen sea muy complejo, pero si que hay que ir ligero para que luego tengas tiempo de repasar todas las preguntas. Personalmente, ya traía bastante experiencia en vim y tmux por lo que era bastante ágil con el terminal. Por eso es importante que estés familiarizado con los comandos para que no pierdas tiempo en buscarlos. Si prefieres nano o el gestor de pestañas del terminal del linux perfecto, la idea es que estés cómodo y que seas lo más rápido posible en el terminal.</p>
+<p>Aunque es recomendable llevar la sintaxis fresca es imposible recordar todos los yaml de un objeto de memoria, en estos casos no te preocupes, tienes a tu disposición en el navegador de la máquina del examen acceso a la documentación de kubernetes. La navegación está muy limitada a la web de kubernetes pero es suficiente para encontrar toda la información que necesitas. En mi caso me molesté en documentarme los objetos que más utilizaba en mi web (puedes consultarla en la pestaña de -&gt; Documentación/contenedores/kubernetes) y de cara al examen tuve que practicar utilizando la oficial para ser rápido y tener ubicado todo lo que necesitaba en el examen.</p>
+<p>Cuando empieces el examen la máquina virtual a la que te dan acceso trae la configuración de un linux por defecto. Aquí es interesante que inviertas un par de minutos en configurar tu entorno de trabajo.</p>
+<p>Sin duda ganarás mucho tiempo configurando alias de kubernetes. Al menos el <code>k</code> para abreviar <code>kubectl</code> y el <code>dro</code> para <code>--dry-run=client -o yaml</code> te permitirá crear plantillas de objetos de kubernetes mucho más rápido (y el dry-run te permite ver el resultado sin crear el objeto). Estas configuraciones las puedes hacer en el fichero <code>.bashrc</code>:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">alias k=kubectl</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">alias dro=--dry-run=client -o yaml</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copiar código" title="Copiar" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>También puede ser interesante configurar tmux y vim si tienes alguna personalización que aumente tu productividad. Personalmente, con los alias tenía suficiente para ganar tiempo.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="conclusión">Conclusión<a href="https://pabpereza.dev/blog/CKA:%20Mi%20experiencia#conclusi%C3%B3n" class="hash-link" aria-label="Enlace directo al Conclusión" title="Enlace directo al Conclusión">​</a></h2>
+<p>En resumen, la certificación CKA te permite sentirte cómodo administrando un cluster de kubernetes. Si tienes conocimientos previos de contenedores y orquestadores, no debería ser un problema. Si no los tienes, te recomiendo que te familiarices con ellos antes de empezar con la certificación. En cualquier caso, aún con la certificación, te encuentras con muchas situaciones en el día a día que no están cubiertas en el temario y que tendrás que investigar por tu cuenta.</p>
+<p>Espero que os haya servido de ayuda. Si tenéis cualquier duda, podéis preguntarme por cualquiera de mis redes sociales. ¡Un saludo!</p>]]></content>
+        <author>
+            <name>Pablo Pérez-Aradros</name>
+            <email>pabloperezaradros@gmail.com</email>
+            <uri>https://github.com/pabpereza</uri>
+        </author>
+        <category label="kubernetes" term="kubernetes"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Crea y comparte backups en docker]]></title>
+        <id>https://pabpereza.dev/blog/Crea y comparte backups en docker</id>
+        <link href="https://pabpereza.dev/blog/Crea y comparte backups en docker"/>
+        <updated>2022-12-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[En docker, podemos utilizar volúmenes para persistir datos incluso cuando los contenedores se destruyen. Estos volúmenes eran complejos de administrar en muchas circunstancias, por lo que docker ha creado una nueva funcionalidad para docker desktop, que nos permite crear backups de los volúmenes y compartirlos con otros usuarios de una forma sencilla.]]></summary>
+        <content type="html"><![CDATA[<p>En docker, podemos utilizar volúmenes para persistir datos incluso cuando los contenedores se destruyen. Estos volúmenes eran complejos de administrar en muchas circunstancias, por lo que docker ha creado una nueva funcionalidad para docker desktop, que nos permite crear backups de los volúmenes y compartirlos con otros usuarios de una forma sencilla.</p>
+<p><img decoding="async" loading="lazy" src="https://www.docker.com/wp-content/uploads/2022/09/share-volume-docker.png.webp" alt="Docker backups" class="img_ev3q"></p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="cómo-funciona">¿Cómo funciona?<a href="https://pabpereza.dev/blog/Crea%20y%20comparte%20backups%20en%20docker#c%C3%B3mo-funciona" class="hash-link" aria-label="Enlace directo al ¿Cómo funciona?" title="Enlace directo al ¿Cómo funciona?">​</a></h2>
+<p>Docker desktop empezó a ofrecer extensiones hace unos meses. Estas extensiones nos permiten añadir funcionalidades a docker desktop, como por ejemplo, gestión visual de logs, uso de disco, herramientas de desarrollo, seguridad, etc.</p>
+<p><a href="https://www.youtube.com/watch?v=6je3tV-_7I0" target="_blank" rel="noopener noreferrer">Tengo un vídeo en youtube hablando de las extensiones de docker desktop</a>, si quieres saber más sobre ellas.</p>
+<p>En este caso, la extensión que nos interesa es la de <strong>Docker Backup</strong>. Esta extensión nos permite crear backups de los volúmenes de docker y compartirlos con otros usuarios de diferentes formas. Dentro vídeo:</p>
+<p><a href="https://youtu.be/thqgLGMfsGw" target="_blank" rel="noopener noreferrer">https://youtu.be/thqgLGMfsGw</a></p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="comandos-utilizados">Comandos utilizados<a href="https://pabpereza.dev/blog/Crea%20y%20comparte%20backups%20en%20docker#comandos-utilizados" class="hash-link" aria-label="Enlace directo al Comandos utilizados" title="Enlace directo al Comandos utilizados">​</a></h2>
+<p>Crear el contenedor de postgresql para las pruebas:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">docker run --hostname=cb8f628fbe6d --mac-address=02:42:ac:11:00:02 --env=POSTGRES_PASSWORD=postgrespw --env=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/postgresql/15/bin --env=GOSU_VERSION=1.14 --env=LANG=en_US.utf8 --env=PG_MAJOR=15 --env=PG_VERSION=15.1-1.pgdg110+1 --env=PGDATA=/var/lib/postgresql/data --volume=/var/lib/postgresql/data -p 5432 --label='com.docker/featured-image=postgres:latest' --runtime=runc -d postgres:latest</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copiar código" title="Copiar" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>]]></content>
+        <author>
+            <name>Pablo Pérez-Aradros</name>
+            <email>pabloperezaradros@gmail.com</email>
+            <uri>https://github.com/pabpereza</uri>
+        </author>
+        <category label="docker" term="docker"/>
+        <category label="noticia" term="noticia"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Pentesting desde un contenedor]]></title>
+        <id>https://pabpereza.dev/blog/pentesting_desde_un_contenedor</id>
+        <link href="https://pabpereza.dev/blog/pentesting_desde_un_contenedor"/>
+        <updated>2022-08-29T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[He hablado mucho de como hacer diversas acciones en docker y contenedores. Tampoco quiero que mi contenido sea monotemático pero]]></summary>
+        <content type="html"><![CDATA[<p>He hablado mucho de como hacer diversas acciones en docker y contenedores. Tampoco quiero que mi contenido sea monotemático pero
+me han lanzando una sugerencia de vídeo y no me puedo resistir a abordar el tema.</p>
+<p>Concretamente, el usuario pwnhun73r me sugirió utilizar contenedores para pentesting en laboratorios como HackTheBox o TryHackMe. Gracias por el apoyo y la sugerencia. Tu también puedes sugerir nuevo contenido desde <a href="https://github.com/pabpereza/pabpereza/issues" target="_blank" rel="noopener noreferrer">la sección de issues de esta página en GitHub</a>.</p>
+<p>Hace tiempo que no me dedico al pentesting profesionalmente pero tampoco me gusta que se me oxide el tema. Youtube es muy restrictivo con el contenido del hacking por lo que, para este vídeo, me limitaré a plantear el entorno sin entrar en la explotación.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="por-qué">¿Por qué?<a href="https://pabpereza.dev/blog/pentesting_desde_un_contenedor#por-qu%C3%A9" class="hash-link" aria-label="Enlace directo al ¿Por qué?" title="Enlace directo al ¿Por qué?">​</a></h2>
+<p>Esta es la pregunta del millón... ¿Por qué?¿Cuál es la necesidad?. Realmente las máquinas virtuales para esta labor igual son más prácticas que un contenedor, tienes tus copias de seguridad, tu interfaz, puedes conectarles hardware cómodamente (antenas, cables, etc) y puedes configurar los servicios que necesites.</p>
+<p>Para los fanáticos de los contenedores como yo, es por amor de llevar la tecnología al límite. Hay que reconocer que los contenedores tienen sus ventajas. Fáciles de ejecutar, versionar y almacenar. Suficiente para justificar este vídeo.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="retos">Retos<a href="https://pabpereza.dev/blog/pentesting_desde_un_contenedor#retos" class="hash-link" aria-label="Enlace directo al Retos" title="Enlace directo al Retos">​</a></h2>
+<p>Tenemos dos retos a tener en cuenta basados en dos escenarios:</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="contenedor-para-pentesting-de-un-sitio-web-público">Contenedor para pentesting de un sitio web público<a href="https://pabpereza.dev/blog/pentesting_desde_un_contenedor#contenedor-para-pentesting-de-un-sitio-web-p%C3%BAblico" class="hash-link" aria-label="Enlace directo al Contenedor para pentesting de un sitio web público" title="Enlace directo al Contenedor para pentesting de un sitio web público">​</a></h3>
+<p>Antes de nada recordad que el sitio deberá ser de vuestra propiedad o deberéis tener permiso para auditarlo.</p>
+<p>En este supuesto, accedemos a algún sitio público y queremos hacer pentesting. Para la parte de la enumeración no tendremos limitación alguna. El problema surge cuando queremos explotar un sitio. La mayoría de conexiones que intentaremos generar serán inversas y, por tanto, necesitaremos abrir puertos en el router.</p>
+<p><img decoding="async" loading="lazy" src="https://pabpereza.dev/assets/images/web_container.drawio-b767414a90567864b66d89884997ba48.png" width="331" height="461" class="img_ev3q"></p>
+<p>Supongamos que hacemos las pruebas desde un servidor público también, como un VPS. En este caso, no tendremos problema para abrir puertos. Aunque no todo queda ahí, tendremos que natear al contenedor un rango de puertos para que el servidor pueda acceder a los servicios que estemos ejecutando en el contenedor.</p>
+<p>Imaginaros que estamos escuchando una conexión con netcat en el puerto 4444. Deberíamos ejecutar el contenedor con ese puerto mapeado del host para que podamos capturar las conexiones desde del contenedor.</p>
+<p>Esto podemos hacerlo así:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">docker run -it -p 4444:4444 kalilinux/kali-rolling /bin/bash</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copiar código" title="Copiar" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="contenedor-para-pentesting-en-un-laboratorio-privado">Contenedor para pentesting en un laboratorio privado<a href="https://pabpereza.dev/blog/pentesting_desde_un_contenedor#contenedor-para-pentesting-en-un-laboratorio-privado" class="hash-link" aria-label="Enlace directo al Contenedor para pentesting en un laboratorio privado" title="Enlace directo al Contenedor para pentesting en un laboratorio privado">​</a></h3>
+<p>En este caso, la parte de acceso y enrutamiento es más sencillo dado que normalmente a los laboratorios de pentesting nos conectamos a través de una VPN, la cuál, nos crea un tunel directamente desde el contenedor al laboratorio.</p>
+<p><img decoding="async" loading="lazy" src="https://pabpereza.dev/assets/images/lab_container.drawio-a4162f70dbd2bab1f2eb134638aaede0.png" width="337" height="545" class="img_ev3q"></p>
+<p>La problemática viene por la parte del cliente VPN en los contenedores.</p>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="limitaciones">Limitaciones<a href="https://pabpereza.dev/blog/pentesting_desde_un_contenedor#limitaciones" class="hash-link" aria-label="Enlace directo al Limitaciones" title="Enlace directo al Limitaciones">​</a></h4>
+<p>La principal limitación es la acceso a las interfaces de red. En una máquina virtual virtualizas tanto software como hardware. En el caso de los contenedores, al ser procesos aislados, tenemos que lidiar con la problemática de crear interfaces de red para las VPN de algunos laboratorio.</p>
+<p>Podemos levantar un contenedor con Kali Linux solventando estas limitaciones, usando el parámetro <code>--privileged</code> para que el contenedor tenga acceso a las interfaces de red del host y <code>--sysctl net.ipv6.conf.all.disable_ipv6=0</code> para que el contenedor tenga acceso a la red IPv6.</p>
+<p>El comando completo sería:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">docker run -it --privileged --sysctl net.ipv6.conf.all.disable_ipv6=0 kalilinux/kali-rolling /bin/bash</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copiar código" title="Copiar" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>Así ya podríamos conectarnos a HackTheBox, por ejemplo.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="vídeo">Vídeo<a href="https://pabpereza.dev/blog/pentesting_desde_un_contenedor#v%C3%ADdeo" class="hash-link" aria-label="Enlace directo al Vídeo" title="Enlace directo al Vídeo">​</a></h2>
+<p>Sin más preámbulos, dentro vídeo:
+<a href="https://youtu.be/0GsiBPVRMyI" target="_blank" rel="noopener noreferrer">https://youtu.be/0GsiBPVRMyI</a></p>]]></content>
+        <author>
+            <name>Pablo Pérez-Aradros</name>
+            <email>pabloperezaradros@gmail.com</email>
+            <uri>https://github.com/pabpereza</uri>
+        </author>
+        <category label="docker" term="docker"/>
+        <category label="pentesting" term="pentesting"/>
+        <category label="seguridad" term="seguridad"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Potencia powershell]]></title>
+        <id>https://pabpereza.dev/blog/Potencia powershell</id>
+        <link href="https://pabpereza.dev/blog/Potencia powershell"/>
+        <updated>2022-08-08T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[He de reconocer que no soy]]></summary>
+        <content type="html"><![CDATA[<p>He de reconocer que no soy
+muy fan de powershell, es más,
+en ciertos momentos de mi vida
+he llegado a detestarlo.
+Tanto si te encanta powershell
+como si te ves forzado a usarlo, hay que reconocer quees muy mejorable.</p>
+<p>En el anterior vídeo vimos el proceso de potenciar el terminal en entornos unix y linux mediante
+zsh y oh-my-zsh. <a href="https://pabpereza.dev/blog/Potencia%20tu%20terminal">Aquí la entrada al blog y enlace al vídeo</a></p>
+<p>Para esta ocasión, abordaremos
+el tema en sistemas windows
+utilizando oh my posh.
+OMP nos ofrece características,
+que a día de hoy considero
+indispensables, como:</p>
+<ul>
+<li>Auto completado</li>
+<li>Navegación simplificada</li>
+<li>Información avanzada</li>
+<li>Personalizacion con múltiples temas</li>
+</ul>
+<p>Dentro vídeo:
+<a href="https://youtu.be/kWIesAUhLAg" target="_blank" rel="noopener noreferrer">https://youtu.be/kWIesAUhLAg</a></p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="todos-los-comandos-del-vídeo-y-enlaces-están-en-la-siguiente-página">Todos los comandos del vídeo y enlaces están en la siguiente página:<a href="https://pabpereza.dev/blog/Potencia%20powershell#todos-los-comandos-del-v%C3%ADdeo-y-enlaces-est%C3%A1n-en-la-siguiente-p%C3%A1gina" class="hash-link" aria-label="Enlace directo al Todos los comandos del vídeo y enlaces están en la siguiente página:" title="Enlace directo al Todos los comandos del vídeo y enlaces están en la siguiente página:">​</a></h3>
+<p><strong>Documentación: <a href="https://pabpereza.dev/docs/notas/oh_my_posh">/docs/windows/oh_my_posh/</a></strong></p>]]></content>
+        <author>
+            <name>Pablo Pérez-Aradros</name>
+            <email>pabloperezaradros@gmail.com</email>
+            <uri>https://github.com/pabpereza</uri>
+        </author>
+        <category label="powershell" term="powershell"/>
+        <category label="terminal" term="terminal"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Escalar privilegios en docker]]></title>
+        <id>https://pabpereza.dev/blog/Escalar privilegios en docker</id>
+        <link href="https://pabpereza.dev/blog/Escalar privilegios en docker"/>
+        <updated>2022-03-29T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Los contenedores son procesos aislados que, por defecto, ¿se podrían considerar como seguros?. Su enfoque nos dice que sí pero existen muchos casos en los que, principalmente por malas configuraciones, podrían ser vulnerables.]]></summary>
+        <content type="html"><![CDATA[<p>Los contenedores son procesos aislados que, por defecto, ¿se podrían considerar como seguros?. Su enfoque nos dice que sí pero existen muchos casos en los que, principalmente por malas configuraciones, podrían ser vulnerables.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="aislados-pero-no-herméticos">Aislados pero no herméticos<a href="https://pabpereza.dev/blog/Escalar%20privilegios%20en%20docker#aislados-pero-no-herm%C3%A9ticos" class="hash-link" aria-label="Enlace directo al Aislados pero no herméticos" title="Enlace directo al Aislados pero no herméticos">​</a></h2>
+<p>Tecnologías de contenedores como Docker, LXC, LXD, etc.. permiten a los usuarios lanzar un proceso aislado pero, existen multiples funcionalidades, que podrían comprometer la aplicación en mayor o menor medida.</p>
+<p><strong>Documentación: <a href="https://pabpereza.dev/docs/notas/seguridad-contenedores">Seguridad contenedores</a></strong></p>
+<p>En este vídeo trato las principales malas configuraciones que permiten a un atacante escapar de un contenedor:</p>
+<p><a href="https://youtu.be/XmOsJXA0FU8" target="_blank" rel="noopener noreferrer">https://youtu.be/XmOsJXA0FU8</a></p>
+<p>Principales malas configuraciones:</p>
+<ul>
+<li>Montaje de volúmenes</li>
+<li>Ejecución en modo privilegiado</li>
+<li>Escalado a través del grupo de docker</li>
+<li>Host vulnerable</li>
+<li>Secretos o variables de entorno</li>
+<li>Montaje del socket</li>
+<li>Segregación de redes</li>
+</ul>]]></content>
+        <author>
+            <name>Pablo Pérez-Aradros</name>
+            <email>pabloperezaradros@gmail.com</email>
+            <uri>https://github.com/pabpereza</uri>
+        </author>
+        <category label="docker" term="docker"/>
+        <category label="privilegios" term="privilegios"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Raspberry Pi Touchscreen 7]]></title>
+        <id>https://pabpereza.dev/blog/raspberry_pi_touchscreen_7_pulgafas</id>
+        <link href="https://pabpereza.dev/blog/raspberry_pi_touchscreen_7_pulgafas"/>
+        <updated>2022-02-27T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Las raspberry pi son de las computadoras más versátiles y asequibles que puedes encontrar en el mercado. Además, dada su popularidad, tienen una gran cantidad de software específico (pihole, piretro... etc) que ayudará a darle un sinfín de usos y, por otra parte, tiene muchos accesorios que la potenciarán aún más si cabe.]]></summary>
+        <content type="html"><![CDATA[<p>Las raspberry pi son de las computadoras más versátiles y asequibles que puedes encontrar en el mercado. Además, dada su popularidad, tienen una gran cantidad de software específico (pihole, piretro... etc) que ayudará a darle un sinfín de usos y, por otra parte, tiene muchos accesorios que la potenciarán aún más si cabe.</p>
+<p>Concretamente me refiero a la pantalla táctil de 7 pulgadas que se puede montar en cualquier raspberry pi. Esta se puede utilizar para crear un consola portátil, control industrial, etc.</p>
+<p><img decoding="async" loading="lazy" src="https://pabpereza.dev/assets/images/raspberry_touchscreen_banner-b8a03c314437d3c25d2fa0f15304bcc1.png" width="654" height="381" class="img_ev3q"></p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="instalación-y-configuración">Instalación y configuración<a href="https://pabpereza.dev/blog/raspberry_pi_touchscreen_7_pulgafas#instalaci%C3%B3n-y-configuraci%C3%B3n" class="hash-link" aria-label="Enlace directo al Instalación y configuración" title="Enlace directo al Instalación y configuración">​</a></h3>
+<p>En este vídeo he detallado el proceso de instalación y configuración de la pantalla táctil.</p>
+<p><a href="https://youtu.be/eGZvo7AnO_U" target="_blank" rel="noopener noreferrer">https://youtu.be/eGZvo7AnO_U</a></p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="pero-y-la-carcasa">Pero, ¿y la carcasa?<a href="https://pabpereza.dev/blog/raspberry_pi_touchscreen_7_pulgafas#pero-y-la-carcasa" class="hash-link" aria-label="Enlace directo al Pero, ¿y la carcasa?" title="Enlace directo al Pero, ¿y la carcasa?">​</a></h3>
+<p>En la pantalla oficial no viene incluida una carcasa que proteja la parte trasera de la pantalla y la raspberry. Podemos comprarlas por precios entre 10-20€, aunque, si eres maker o tienes una impresora 3D, en la web de <a href="https://www.thingiverse.com/search?q=raspberry+touchscreen+7&amp;type=things&amp;sort=relevant" target="_blank" rel="noopener noreferrer">thingiverse</a> podrás encontrar una gran variedad de modelos para hacértela tu mismo.</p>]]></content>
+        <author>
+            <name>Pablo Pérez-Aradros</name>
+            <email>pabloperezaradros@gmail.com</email>
+            <uri>https://github.com/pabpereza</uri>
+        </author>
+        <category label="raspberry" term="raspberry"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Potencia tu terminal]]></title>
+        <id>https://pabpereza.dev/blog/Potencia tu terminal</id>
+        <link href="https://pabpereza.dev/blog/Potencia tu terminal"/>
+        <updated>2021-12-30T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Hola y bienvenidos a un nuevo vídeo en el que hablaremos de zsh y un framework llamado oh-my-zsh. Estos te permitirán personalizar el terminal para adaptarlo a tus gustos y necesidades. Espero que después de este vídeo termines amándolo y usándolo más a menudo.]]></summary>
+        <content type="html"><![CDATA[<p>Hola y bienvenidos a un nuevo vídeo en el que hablaremos de zsh y un framework llamado oh-my-zsh. Estos te permitirán personalizar el terminal para adaptarlo a tus gustos y necesidades. Espero que después de este vídeo termines amándolo y usándolo más a menudo.</p>
+<p>Dentro vídeo:
+<a href="https://youtu.be/cyK89jHB9JA" target="_blank" rel="noopener noreferrer">https://youtu.be/cyK89jHB9JA</a></p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="todos-los-comandos-del-vídeo-y-enlaces-estan-en-la-siguiente-página">Todos los comandos del vídeo y enlaces estan en la siguiente página:<a href="https://pabpereza.dev/blog/Potencia%20tu%20terminal#todos-los-comandos-del-v%C3%ADdeo-y-enlaces-estan-en-la-siguiente-p%C3%A1gina" class="hash-link" aria-label="Enlace directo al Todos los comandos del vídeo y enlaces estan en la siguiente página:" title="Enlace directo al Todos los comandos del vídeo y enlaces estan en la siguiente página:">​</a></h3>
+<p><strong>Documentación: <a href="https://pabpereza.dev/docs/notas/zsh">/notas/zsh/</a></strong></p>]]></content>
+        <author>
+            <name>Pablo Pérez-Aradros</name>
+            <email>pabloperezaradros@gmail.com</email>
+            <uri>https://github.com/pabpereza</uri>
+        </author>
+        <category label="bash" term="bash"/>
+        <category label="zsh" term="zsh"/>
+        <category label="terminal" term="terminal"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Errores comunes en Git]]></title>
+        <id>https://pabpereza.dev/blog/Errores comunes git</id>
+        <link href="https://pabpereza.dev/blog/Errores comunes git"/>
+        <updated>2021-12-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Hola y bienvenidos a una nueva entrada del blog. En este artículo se explicarán los errores más comunes en git y como solucionarlos.]]></summary>
+        <content type="html"><![CDATA[<p>Hola y bienvenidos a una nueva entrada del blog. En este artículo se explicarán los errores más comunes en git y como solucionarlos.</p>
+<p><img decoding="async" loading="lazy" src="https://pabpereza.dev/assets/images/git_banner-c6a8fb30237cadc49904b298ba91635c.png" width="1200" height="512" class="img_ev3q"></p>
+<p>Git es un sistma metódico de control de versiones, que permite almacenar una serie de cambios en un repositorio de código fuente. Durante los
+procesos de desarrollo es muy habitual que se cometan ciertos errores al trabajar con git. No pasa nada, es normal y más cuando se esta aprendiendo.</p>
+<p>En este vídeo comento los que considero más comunes pero no dudes en contribuir si se te ocurre algún error que no se haya explicado.
+Todos los comandos los puedes encontrar en la <a href="https://pabpereza.dev/docs/notas/git_errores_comunes">documentación</a> por escrito. Para todo lo demás, dentro vídeo:</p>
+<p><a href="https://youtu.be/9sK_is8ufbk" target="_blank" rel="noopener noreferrer">https://youtu.be/9sK_is8ufbk</a></p>]]></content>
+        <author>
+            <name>Pablo Pérez-Aradros</name>
+            <email>pabloperezaradros@gmail.com</email>
+            <uri>https://github.com/pabpereza</uri>
+        </author>
+        <category label="git" term="git"/>
+        <category label="errores" term="errores"/>
+        <category label="video" term="video"/>
+        <category label="desarrollo" term="desarrollo"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Linux en Windows - Windows Subsystem Linux]]></title>
+        <id>https://pabpereza.dev/blog/Linux en Windows - WSL</id>
+        <link href="https://pabpereza.dev/blog/Linux en Windows - WSL"/>
+        <updated>2021-11-10T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[El subsistema de linux en windows se introdujo hace unos años en windows 10 pero sus primeras versiones tenían ciertas limitaciones y no acababa de funcionar como se esperaba. Personalmente, con WSL2 y Windows 11 creo que ha llegado a ofrecer el funcionamiento que realmente se esperaba de el. Dentro vídeo:]]></summary>
+        <content type="html"><![CDATA[<p>El subsistema de linux en windows se introdujo hace unos años en windows 10 pero sus primeras versiones tenían ciertas limitaciones y no acababa de funcionar como se esperaba. Personalmente, con WSL2 y Windows 11 creo que ha llegado a ofrecer el funcionamiento que realmente se esperaba de el. Dentro vídeo:
+<a href="https://youtu.be/p04dRcQh2VM" target="_blank" rel="noopener noreferrer">https://youtu.be/p04dRcQh2VM</a></p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="ventajas-y-desventajas">Ventajas y desventajas<a href="https://pabpereza.dev/blog/Linux%20en%20Windows%20-%20WSL#ventajas-y-desventajas" class="hash-link" aria-label="Enlace directo al Ventajas y desventajas" title="Enlace directo al Ventajas y desventajas">​</a></h2>
+<p>En el vídeo analizo las principales ventajas que ofrece y alguna que otra desventaja por el camino. Los principales puntos a destacar son:</p>
+<ul>
+<li>El consumo de memoria es inferior al de una máquina virtual. Aunque mayor que una solución nativa, windows virtualiza un kernel linux que aprovechan y comparten las distintas distribuciones del subsistema.</li>
+<li>También sirve backend para aplicaciones como Docker Desktop o Rancher Desktop haciendolos más livianos que usándolos sober hyper-V.</li>
+<li>La integración con windows terminal es sencilla. Además, este nuevo terminal nos ofrece una interfaz limpia, personalizable y con una multitarea que ya le hacía falta. Nose vosotros pero a mi me encanta.</li>
+<li>Simplicidad en el uso de varios entornos, instalación, reseteo o borrado.</li>
+<li>La integración con VS Code de forma bidireccional es algo que me encanta. Ya no me molesto en instalar los lenguajes de programación o las herramientas de sistemas en windows, prácticamente todo lo uso sobre una distribución u otra en función de lo que necesite.</li>
+<li>Montaje del sistema de archivos. Aunque el acceso es más lento al ser dos sistemas de archivos diferentes, windows nos monta nuestro home (c:/users/pablo) en cada uno de los subsistemas.</li>
+<li>Integración de los sistemas de archivos de las distribuciones en el explorador de windows.</li>
+</ul>
+<p><img decoding="async" loading="lazy" src="https://pabpereza.dev/assets/images/wslpic-de51d061035377a002c9289ea274155a.png" width="979" height="504" class="img_ev3q"></p>
+<p>Espero que os guste y os anime a sacarle más partido a las herramientas que nos ofrece windows. ¡Hasta el próximo!</p>]]></content>
+        <author>
+            <name>Pablo Pérez-Aradros</name>
+            <email>pabloperezaradros@gmail.com</email>
+            <uri>https://github.com/pabpereza</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Kali en Docker recopilación]]></title>
+        <id>https://pabpereza.dev/blog/kalilinux_en_docker</id>
+        <link href="https://pabpereza.dev/blog/kalilinux_en_docker"/>
+        <updated>2021-11-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Unas semanas antes de la creación de esta web había hecho una trilogía de vídeos hablando de como utilizar el sistema operativo Kalilinux en Docker. Por dejarlos aquí archivados de alguna manera y dejar la documentación por escrito he optado por escribir esta entrada.]]></summary>
+        <content type="html"><![CDATA[<p>Unas semanas antes de la creación de esta web había hecho una trilogía de vídeos hablando de como utilizar el sistema operativo Kalilinux en Docker. Por dejarlos aquí archivados de alguna manera y dejar la documentación por escrito he optado por escribir esta entrada.</p>
+<p>Bueno, yo creo que si conoces la tecnología docker la respuesta es simple. Puedes tener imágenes ligeras, con las herramientas que necesitas, preparadas para ejecutar muy rápidamente. Tambien puedes gestionarlas con un repositorio remoto y transportarlas fácilmente entre distintos entornos.</p>
+<p>Pero como todo, tiene sus grandes inconvenientes. Las imágenes de docker no tienen acceso directo al hardware y eso puede lastrar un poco el rendimiento, concretamente si necesitamos la tarjeta gráfica en operaciones de computación como el cracking de contraseñas.</p>
+<p>En la <a href="https://www.kali.org/get-kali/" target="_blank" rel="noopener noreferrer">propia página</a> de Kali se puede ver la comparativa completa con todas sus opciones:</p>
+<p><a href="https://pabpereza.dev/assets/files/kali_en_docker_banner-c135d5a4f43f849852e45f4ffe7f8b30.png" target="_blank"></a></p>
+<h1>Vídeos explicativos</h1>
+<p><a href="https://youtu.be/yvfXt7Ndrvc" target="_blank" rel="noopener noreferrer">https://youtu.be/yvfXt7Ndrvc</a></p>
+<p><a href="https://youtu.be/qnsi1cnTK3A" target="_blank" rel="noopener noreferrer">https://youtu.be/qnsi1cnTK3A</a></p>
+<p><a href="https://youtu.be/sVJ4iocUods" target="_blank" rel="noopener noreferrer">https://youtu.be/sVJ4iocUods</a></p>]]></content>
+        <author>
+            <name>Pablo Pérez-Aradros</name>
+            <email>pabloperezaradros@gmail.com</email>
+            <uri>https://github.com/pabpereza</uri>
+        </author>
+        <category label="docker" term="docker"/>
+        <category label="kalilinux" term="kalilinux"/>
+        <category label="seguridad" term="seguridad"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[La alternativa a Docker que estabas buscando - Rancher Desktop]]></title>
+        <id>https://pabpereza.dev/blog/Rancher Desktop</id>
+        <link href="https://pabpereza.dev/blog/Rancher Desktop"/>
+        <updated>2021-10-24T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Ya estuve explicando en este artículo los nuevos planes de Docker Desktop y como afectaría a los usuarios.]]></summary>
+        <content type="html"><![CDATA[<p>Ya estuve explicando en este <a href="https://pabpereza.dev/blog/docker_desktop_de_pago">artículo</a> los nuevos planes de Docker Desktop y como afectaría a los usuarios.
+Aunque existen otras alternativas como Buildah o Podman, estas, solo funcionan sobre linux y si sois usuarios de
+Windows o Mac y pensais en montar una máquina Linux quizá prefiráis usar docker engine por la familiaridad que no usar otras herramientas.</p>
+<p>Rancher Desktop se posiciona como una alternativa a tener en cuenta. Dentro vídeo <i class="fa fa-film"></i>
+<a href="https://youtu.be/LmKN4NvpR-4" target="_blank" rel="noopener noreferrer">https://youtu.be/LmKN4NvpR-4</a></p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="qué-es-rancher-desktop">¿Qué es rancher desktop?<a href="https://pabpereza.dev/blog/Rancher%20Desktop#qu%C3%A9-es-rancher-desktop" class="hash-link" aria-label="Enlace directo al ¿Qué es rancher desktop?" title="Enlace directo al ¿Qué es rancher desktop?">​</a></h2>
+<p>Si vienes del mundo de kubernetes seguro que Rancher te es familiar. Este es una plataforma de kubernetes con una capa de gestión
+pensado en la facilidad de despliegue y gestión de clústers.</p>
+<p>En esta ocasión, rancher desktop es una forma de acercarse a los desarrolladores y competir directamente con docker en el escritorio.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="qué-aporta">¿Qué aporta?<a href="https://pabpereza.dev/blog/Rancher%20Desktop#qu%C3%A9-aporta" class="hash-link" aria-label="Enlace directo al ¿Qué aporta?" title="Enlace directo al ¿Qué aporta?">​</a></h2>
+<p>El planteamiento es similar al de Docker Desktop, gestiona automáticamente la instalación de una interfaz de usario, el engine de contenedores (containerd), k3s (la misma tecnología que utiliza rancher para kubernetes), kubectl... etc y todo este paquete en una instalación sencilla.</p>
+<p><img decoding="async" loading="lazy" src="https://pabpereza.dev/assets/images/rancher_desktop_panel-7a643584ce769a926a9d9013771742ff.png" width="2122" height="1652" class="img_ev3q"></p>
+<p>Si has visto el vídeo Rancher Desktop, al menos en Windows, tiene algunos pequeños errores. Cabe recordar que su estado de desarrollo es pre-release y es normal que durante sus betas encontremos
+errores que nos impidan utilizarlo a día de hoy.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="la-alternativa-definitiva">La alternativa definitiva<a href="https://pabpereza.dev/blog/Rancher%20Desktop#la-alternativa-definitiva" class="hash-link" aria-label="Enlace directo al La alternativa definitiva" title="Enlace directo al La alternativa definitiva">​</a></h2>
+<p>Como ya comentaba, una solución 100% efectiva es instalar docker en una máquina virtual de linux. Esto lo podríamos hacer manualmente pero, puestos a hacerlo, mejor hacerlo bien.</p>
+<p>Un viejo compañero con alias <a href="https://github.com/Yohnah" target="_blank" rel="noopener noreferrer">Yohnah</a> en Github ha creado un repositorio con automatismos y una máquina virtual preparada para desplegar automáticamente con Vagrant.
+La máquina virtual viene con docker instalado y listo para funcionar, además, el automatismo deja el host configurado para que utilice el docker engine de la máquina virtual de una forma similar a la que lo hace docker desktop. Toda la guía aquí:
+<a href="https://github.com/Yohnah/Docker" target="_blank" rel="noopener noreferrer">https://github.com/Yohnah/Docker</a></p>
+<p>¡Hasta el siguiente!</p>]]></content>
+        <author>
+            <name>Pablo Pérez-Aradros</name>
+            <email>pabloperezaradros@gmail.com</email>
+            <uri>https://github.com/pabpereza</uri>
+        </author>
+        <category label="docker" term="docker"/>
+        <category label="devops" term="devops"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Analizar la seguridad de las imágenes de Docker]]></title>
+        <id>https://pabpereza.dev/blog/Analizar seguridad docker</id>
+        <link href="https://pabpereza.dev/blog/Analizar seguridad docker"/>
+        <updated>2021-09-19T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[En anteriores vídeos he hablado acerca de la seguridad a la hora de crear imágenes pero hay un aspecto más crítico y fundamental que se suele obviar al construir imágenes. Estas, contienen software en forma de librerías del sistema que también pueden ser vulnerables. Pero, ¿como podemos revisar esa seguridad?]]></summary>
+        <content type="html"><![CDATA[<p>En anteriores vídeos he hablado acerca de la seguridad a la hora de crear imágenes pero hay un aspecto más crítico y fundamental que se suele obviar al construir imágenes. Estas, contienen software en forma de librerías del sistema que también pueden ser vulnerables. Pero, ¿como podemos revisar esa seguridad?</p>
+<p><a href="https://youtu.be/XmGEMOgI9-g" target="_blank" rel="noopener noreferrer">https://youtu.be/XmGEMOgI9-g</a></p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="qué-riesgos-de-seguridad-hay-en-las-imágenes-de-docker">¿Qué riesgos de seguridad hay en las imágenes de Docker?<a href="https://pabpereza.dev/blog/Analizar%20seguridad%20docker#qu%C3%A9-riesgos-de-seguridad-hay-en-las-im%C3%A1genes-de-docker" class="hash-link" aria-label="Enlace directo al ¿Qué riesgos de seguridad hay en las imágenes de Docker?" title="Enlace directo al ¿Qué riesgos de seguridad hay en las imágenes de Docker?">​</a></h2>
+<p>Cuando construimos imágenes de Docker siempre partimos de una imagen base, que es la que se usa para construir las imágenes que queremos. Esta imagen base puede ser una imagen de una distribución Linux, o de una imagen de una aplicación. Estas imágenes pueden contener código de una aplicación, librerías, paquetes, etc. Todo el código que se encuentre en estas imágenes puede ser vulnerable a ataques de seguridad.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="que-herramientas-podemos-usar-para-analizar-la-seguridad-de-las-imágenes-de-docker">¿Que herramientas podemos usar para analizar la seguridad de las imágenes de Docker?<a href="https://pabpereza.dev/blog/Analizar%20seguridad%20docker#que-herramientas-podemos-usar-para-analizar-la-seguridad-de-las-im%C3%A1genes-de-docker" class="hash-link" aria-label="Enlace directo al ¿Que herramientas podemos usar para analizar la seguridad de las imágenes de Docker?" title="Enlace directo al ¿Que herramientas podemos usar para analizar la seguridad de las imágenes de Docker?">​</a></h2>
+<p>Existen multitud de herramientas que pueden ser útiles para analizar la seguridad de las imágenes de Docker. Las más destacadas son:</p>
+<ul>
+<li>Trivy</li>
+<li>Grype</li>
+<li>Clair</li>
+</ul>
+<p>Para este vídeo y evitar instalar nada, hemos utilizado el escáner que viene incorporado con Docker en las últimas versiones. Se puede ejecutar con el siguiente comando:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">docker scan &lt;nombre de la imagen&gt;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copiar código" title="Copiar" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>Iré documentando el uso de diferentes herramientas de análisis de seguridad en la siguiente pagína de la documentación:
+<a href="https://pabpereza.dev/docs/notas/analizar_contenedores">Escaneo de seguridad en contenedores</a></p>]]></content>
+        <author>
+            <name>Pablo Pérez-Aradros</name>
+            <email>pabloperezaradros@gmail.com</email>
+            <uri>https://github.com/pabpereza</uri>
+        </author>
+        <category label="docker" term="docker"/>
+        <category label="seguridad" term="seguridad"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[¿Docker desktop de pago?]]></title>
+        <id>https://pabpereza.dev/blog/docker_desktop_de_pago</id>
+        <link href="https://pabpereza.dev/blog/docker_desktop_de_pago"/>
+        <updated>2021-09-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[La empresa Docker anunció la semana pasada los cambios en su modelo de negocio empresarial y sus nuevos planes de subscripción para empresas.]]></summary>
+        <content type="html"><![CDATA[<p>La empresa Docker anunció la semana pasada los cambios en su modelo de negocio empresarial y <strong>sus nuevos planes de subscripción para empresas</strong>.</p>
+<p>Hasta el momento, la empresa ha sabido posicionarse como una de las más importantes en el mundo de la tecnología pero sin generar ningún tipo de ingreso.</p>
+<p>Las nuevas versiones tendrán ciertas restricciones que forzarán a algunas empresas a utilizar las modalidades de pago.</p>
+<p><img decoding="async" loading="lazy" src="https://pabpereza.dev/assets/images/docker_desktop_planes_banner-3a15c63ac50d9ebb12fe010bd007f42b.png" width="1284" height="610" class="img_ev3q"></p>
+<p>Con el precio, todo hay que decirlo, ganamos muchas funcionalidades como SSO, escaneos de seguridad, builds en la nube, colaboración entre equipos... etc. Podéis ver una lista completa de las funcionalidades en la <a href="https://www.docker.com/pricing" target="_blank" rel="noopener noreferrer">página de Docker</a>.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="quién-tiene-que-pagar">¿Quién tiene que pagar?<a href="https://pabpereza.dev/blog/docker_desktop_de_pago#qui%C3%A9n-tiene-que-pagar" class="hash-link" aria-label="Enlace directo al ¿Quién tiene que pagar?" title="Enlace directo al ¿Quién tiene que pagar?">​</a></h3>
+<p>Las empresas que tengan <strong>más de 250 empleados o unos ingresos anuales de 10 millones de dólares</strong> deberán utilizar los planes profesionales, de equipos o de empresa. Para dar margen a medianas y grandes empresas, las principales afectadas, se dará un periodo de gracia hasta el 31 de Enero de 2022.</p>
+<p>Seguirá siendo totalmente gratuito en los siguientes casos:</p>
+<ul>
+<li>Pequeñas empresas con menos de 250 empleados y menos de 10 millones de dólares de ingresos anuales.</li>
+<li>Uso personal.</li>
+<li>Instituciones educativas.</li>
+<li>Proyectos no comerciales open-source.</li>
+</ul>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="qué-alternativas-tengo">¿Qué alternativas tengo?<a href="https://pabpereza.dev/blog/docker_desktop_de_pago#qu%C3%A9-alternativas-tengo" class="hash-link" aria-label="Enlace directo al ¿Qué alternativas tengo?" title="Enlace directo al ¿Qué alternativas tengo?">​</a></h3>
+<p>Estas nuevas políticas solo afecta a la versión de Docker Desktop, es decir, a la versión de Windows y Mac. En linux se utiliza Docker Engine al cuál no se le aplican estas restricciones.</p>
+<p>Además, docker no es la única forma de construir contenedores. Existen otras tecnologías como <strong>podman</strong> o <strong>buildah</strong> que también nos permiten construir imágenes sin requerir un docker engine aunque estas también solo estan disponibles en Linux.</p>]]></content>
+        <author>
+            <name>Pablo Pérez-Aradros</name>
+            <email>pabloperezaradros@gmail.com</email>
+            <uri>https://github.com/pabpereza</uri>
+        </author>
+        <category label="docker" term="docker"/>
+        <category label="noticia" term="noticia"/>
+    </entry>
+</feed>

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpabpereza=self.webpackChunkpabpereza||[]).push([[1232],{81800:e=>{e.exports=JSON.parse('{"permalink":"/blog/tags/docker/page/2","page":2,"postsPerPage":3,"totalPages":3,"totalCount":9,"previousPage":"/blog/tags/docker","nextPage":"/blog/tags/docker/page/3","blogDescription":"Blog","blogTitle":"Blog"}')}}]);

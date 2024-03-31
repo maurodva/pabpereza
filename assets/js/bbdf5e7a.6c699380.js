@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpabpereza=self.webpackChunkpabpereza||[]).push([[2892],{10720:a=>{a.exports=JSON.parse('{"label":"bash","permalink":"/blog/tags/bash","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);

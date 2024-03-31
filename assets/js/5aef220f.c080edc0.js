@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpabpereza=self.webpackChunkpabpereza||[]).push([[8e3],{73336:e=>{e.exports=JSON.parse('{"label":"seguridad","permalink":"/blog/tags/seguridad","allTagsPath":"/blog/tags","count":3,"unlisted":false}')}}]);

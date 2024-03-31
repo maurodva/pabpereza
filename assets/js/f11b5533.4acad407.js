@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpabpereza=self.webpackChunkpabpereza||[]).push([[4991],{79240:e=>{e.exports=JSON.parse('{"label":"pentesting","permalink":"/blog/tags/pentesting","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);

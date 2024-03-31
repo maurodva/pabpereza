@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpabpereza=self.webpackChunkpabpereza||[]).push([[7476],{54064:a=>{a.exports=JSON.parse('{"label":"kalilinux","permalink":"/blog/tags/kalilinux","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);

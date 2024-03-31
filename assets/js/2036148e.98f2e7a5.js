@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpabpereza=self.webpackChunkpabpereza||[]).push([[7984],{21368:a=>{a.exports=JSON.parse('{"label":"raspberry","permalink":"/blog/tags/raspberry","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);
